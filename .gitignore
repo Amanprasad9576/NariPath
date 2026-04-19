@@ -60,5 +60,8 @@ frontend/lerna-debug.log*
 *.log
 *.tsbuildinfo
 .next/
+**/.next/
+__pycache__/
+**/__pycache__/
 node_modules/
 out/
