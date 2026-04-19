@@ -1,6 +1,5 @@
 # Ashoka-Innovate
-AI-powered travel assistant for women focusing on safety, sustainability, and financial security
-# AI-Powered Travel Guardian for Women
+AI-powered travel assistant for women focusing on safety, sustainability, and financial security.
 
 ## Overview
 This project is an AI-driven travel assistant designed to enhance safety, sustainability, and financial security for women travelers through real-time intelligence and smart decision-making.
@@ -14,44 +13,66 @@ This project is an AI-driven travel assistant designed to enhance safety, sustai
 
 ## Setup Instructions
 
-### Prerequisites
-- Python 3.8+
-- Flask
+This repository is split into two folders for clarity:
+- `backend/` for Flask backend code
+- `frontend/` for Next.js + Tailwind frontend code
 
-### Installation
-1. Clone the repository:
+### Backend
+1. Navigate to the backend folder:
     sh
-    git clone https://github.com/your-username/ai-travel-guardian.git
-    cd ai-travel-guardian
-    
+    cd backend
 
-2. Install the dependencies:
+2. Install Python dependencies:
     sh
     pip install -r requirements.txt
-    
 
-3. Run the application:
+3. Run the Flask backend:
     sh
     python app.py
-    
 
-4. Open your browser and navigate to http://127.0.0.1:5000/ to access the application.
+4. Open `http://127.0.0.1:5000/` in your browser.
+
+### Frontend
+1. Navigate to the frontend folder:
+    sh
+    cd frontend
+
+2. Install Node dependencies:
+    sh
+    npm install
+
+3. Start the Next.js app:
+    sh
+    npm run dev
+
+4. Open `http://localhost:3000/` in your browser.
 
 ## Project Structure
 
-ai-travel-guardian/
-├── app.py
-├── models.py
-├── fintech.py
-├── community.py
-├── templates/
-│   └── index.html
-├── static/
-│   ├── styles.css
-│   └── scripts.js
-├── requirements.txt
-└── README.md
-
+Ashoka-Innovate/
+├── backend/
+│   ├── app.py
+│   ├── community.py
+│   ├── fintech.py
+│   ├── models.py
+│   ├── requirements.txt
+│   ├── static/
+│   │   ├── scripts.js
+│   │   └── styles.css
+│   └── templates/
+│       └── index.html
+├── frontend/
+│   ├── app/
+│   ├── components/
+│   ├── hooks/
+│   ├── services/
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── tailwind.config.ts
+ │   ├── next.config.mjs
+ │   └── postcss.config.js
+├── README.md
+└── .gitignore
 
 ## Future Enhancements
 - Implement real AI models for safety scoring and itinerary planning.

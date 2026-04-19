@@ -1,0 +1,64 @@
+# =========================
+# Python (Backend)
+# =========================
+backend/.venv/
+backend/__pycache__/
+backend/*.pyc
+backend/*.py[cod]
+backend/*$py.class
+backend/.Python
+backend/build/
+backend/develop-eggs/
+backend/dist/
+backend/downloads/
+backend/eggs/
+backend/.eggs/
+backend/lib/
+backend/lib64/
+backend/parts/
+backend/sdist/
+backend/var/
+backend/wheels/
+backend/*.egg-info/
+backend/.installed.cfg
+backend/*.egg
+backend/.env
+
+# If venv is in root
+.venv/
+__pycache__/
+*.pyc
+*.py[cod]
+*$py.class
+
+# =========================
+#  Node / Next.js (Frontend)
+# =========================
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/*.tsbuildinfo
+frontend/next-env.d.ts
+
+# Logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+frontend/lerna-debug.log*
+
+# =========================
+#  Common
+# =========================
+.env
+.DS_Store
+*.log
+*.tsbuildinfo
+.next/
+node_modules/
+out/
