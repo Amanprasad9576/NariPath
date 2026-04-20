@@ -1,4 +1,4 @@
-# Ashoka-Innovate
+# Nari Path
 AI-powered travel assistant for women focusing on safety, sustainability, and financial security.
 
 ## Overview
@@ -49,7 +49,7 @@ This repository is split into two folders for clarity:
 
 ## Project Structure
 
-Ashoka-Innovate/
+Nari Path/
 ├── backend/
 │   ├── app.py
 │   ├── community.py

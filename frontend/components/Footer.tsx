@@ -7,11 +7,11 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.2fr_2fr]">
           <div>
-            <p className="text-lg font-semibold text-slate-900">Ashoka Travel</p>
+            <p className="text-lg font-semibold text-slate-900">Nari Path</p>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-slate-600">
               AI-assisted travel planning focused on safety, culture, and practical tools for your journey.
             </p>
-            <p className="mt-6 text-xs text-slate-400">© {new Date().getFullYear()} Ashoka Innovate. All rights reserved.</p>
+            <p className="mt-6 text-xs text-slate-400">© {new Date().getFullYear()} Mohit Mahajan. All rights reserved.</p>
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Features</p>

@@ -24,18 +24,6 @@ export type CultureNote = {
   description: string;
 };
 
-export async function translateText(text: string, targetLanguage: string) {
-  const response = await fetch(`${API_BASE}/translate`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ text, targetLanguage }),
-  });
-  if (!response.ok) {
-    throw new Error('Translation request failed');
-  }
-  return response.json();
-}
-
 export async function fetchRestaurants(): Promise<Restaurant[]> {
   const response = await fetch(`${API_BASE}/restaurants`);
   if (!response.ok) {
