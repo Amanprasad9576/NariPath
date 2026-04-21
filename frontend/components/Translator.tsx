@@ -2,14 +2,13 @@
 
 import { useEffect, useMemo, useState, type FormEvent } from 'react';
 import {
-  fetchLibreLanguages,
-  getLibreTranslateApiKey,
-  libreTranslateText,
+  fetchMyMemoryLanguages,
+  myMemoryTranslateText,
   targetLanguagesForSource,
-  type LibreLanguage,
-} from '@/lib/libretranslate';
+  type MyMemoryLanguage,
+} from '@/lib/mymemory';
 
-const FALLBACK_LANGS: LibreLanguage[] = [
+const FALLBACK_LANGS: MyMemoryLanguage[] = [
   { code: 'auto', name: 'Auto-detect', targets: [] },
   { code: 'en', name: 'English', targets: ['es', 'fr', 'de', 'hi', 'ja'] },
   { code: 'es', name: 'Spanish', targets: ['en', 'fr'] },
@@ -20,7 +19,7 @@ const FALLBACK_LANGS: LibreLanguage[] = [
 ];
 
 export function Translator() {
-  const [languages, setLanguages] = useState<LibreLanguage[]>(FALLBACK_LANGS);
+  const [languages, setLanguages] = useState<MyMemoryLanguage[]>(FALLBACK_LANGS);
   const [langsLoading, setLangsLoading] = useState(true);
   const [langsError, setLangsError] = useState<string | null>(null);
 
@@ -31,7 +30,7 @@ export function Translator() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const hasApiKey = useMemo(() => Boolean(getLibreTranslateApiKey()), []);
+  const hasApiKey = useMemo(() => true, []); // MyMemory doesn't require API key
 
   useEffect(() => {
     let cancelled = false;
@@ -39,7 +38,7 @@ export function Translator() {
       setLangsLoading(true);
       setLangsError(null);
       try {
-        const list = await fetchLibreLanguages();
+        const list = await fetchMyMemoryLanguages();
         if (!cancelled) {
           setLanguages(list);
         }
@@ -76,7 +75,7 @@ export function Translator() {
     setError(null);
 
     try {
-      const text = await libreTranslateText(input, source, target);
+      const text = await myMemoryTranslateText(input, source, target);
       setResult(text);
     } catch (err) {
       setError((err as Error).message);
@@ -94,7 +93,7 @@ export function Translator() {
         <div>
           <p className="text-sm uppercase tracking-[0.35em] text-slate-400">Translator</p>
           <h2 className="mt-3 text-3xl font-semibold text-slate-900">Language travel companion</h2>
-          <p className="mt-2 text-sm text-slate-500">Powered by LibreTranslate (direct from your browser).</p>
+          <p className="mt-2 text-sm text-slate-500">Powered by MyMemory Translator.</p>
         </div>
       </div>
 
