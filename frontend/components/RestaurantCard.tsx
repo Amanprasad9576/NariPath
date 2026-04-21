@@ -14,7 +14,10 @@ export function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
       </div>
       <p className="mt-4 text-slate-600">{restaurant.description}</p>
       <div className="mt-5 flex items-center justify-between text-sm text-slate-500">
-        <span>Rating: {restaurant.rating.toFixed(1)}</span>
+        <span>
+          Rating:{' '}
+          {restaurant.rating > 0 ? restaurant.rating.toFixed(1) : 'Not listed'}
+        </span>
         <span className="font-medium text-slate-900">Reserve now</span>
       </div>
     </article>
