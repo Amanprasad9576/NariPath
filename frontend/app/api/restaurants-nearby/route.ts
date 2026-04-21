@@ -1,33 +1,9 @@
 import { NextResponse } from 'next/server';
-
-const GEOAPIFY_BASE = 'https://api.geoapify.com';
-
-type GeoFeature = {
-  geometry?: { type: string; coordinates?: [number, number] };
-  properties?: Record<string, unknown>;
-};
+import { GEOAPIFY_BASE, geocodeSearchFirst, getGeoapifyKey } from '@/lib/geoapify-shared';
 
 type GeoFeatureCollection = {
-  features?: GeoFeature[];
+  features?: { properties?: Record<string, unknown> }[];
 };
-
-function getGeoapifyKey(): string | null {
-  const key = process.env.GEOAPIFY_API_KEY?.trim() || process.env.NEXT_PUBLIC_GEOAPIFY_API_KEY?.trim();
-  return key || null;
-}
-
-function lonLatFromGeocode(feature: GeoFeature | undefined): { lon: number; lat: number } | null {
-  if (!feature) return null;
-  const coords = feature.geometry?.coordinates;
-  if (coords && coords.length >= 2) {
-    return { lon: coords[0], lat: coords[1] };
-  }
-  const props = feature.properties as { lon?: number; lat?: number } | undefined;
-  if (props && typeof props.lon === 'number' && typeof props.lat === 'number') {
-    return { lon: props.lon, lat: props.lat };
-  }
-  return null;
-}
 
 function formatCategory(categories: unknown): string {
   if (!Array.isArray(categories) || categories.length === 0) {
@@ -66,16 +42,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Place is required.' }, { status: 400 });
   }
 
-  const geocodeParams = new URLSearchParams({ text: place, apiKey });
-  const geocodeRes = await fetch(`${GEOAPIFY_BASE}/v1/geocode/search?${geocodeParams.toString()}`);
-  if (!geocodeRes.ok) {
-    const t = await geocodeRes.text();
-    return NextResponse.json({ error: `Geocoding failed: ${t}` }, { status: 502 });
-  }
-
-  const geocodeJson = (await geocodeRes.json()) as GeoFeatureCollection;
-  const first = geocodeJson.features?.[0];
-  const point = lonLatFromGeocode(first);
+  const point = await geocodeSearchFirst(place, apiKey);
   if (!point) {
     return NextResponse.json({ error: 'Could not find that place. Try a city or neighborhood name.' }, { status: 404 });
   }
@@ -126,7 +93,7 @@ export async function POST(req: Request) {
   });
 
   return NextResponse.json({
-    center: { lon, lat, label: place },
+    center: { lon, lat, label: point.label },
     restaurants,
   });
 }
