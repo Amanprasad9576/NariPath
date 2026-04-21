@@ -48,14 +48,3 @@ export async function fetchCultureNotes(): Promise<CultureNote[]> {
   return response.json();
 }
 
-export async function planItinerary(details: string) {
-  const response = await fetch(`${API_BASE}/itinerary`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ details }),
-  });
-  if (!response.ok) {
-    throw new Error('Itinerary generation failed');
-  }
-  return response.json();
-}
