@@ -8,13 +8,13 @@ export default function ContactPage() {
       </Link>
       <h1 className="mt-8 text-4xl font-bold tracking-tight text-slate-900">Contact us</h1>
       <p className="mt-4 text-lg leading-relaxed text-slate-600">
-        Questions about Nari Path, partnerships, or accessibility? We read every message—travel is personal, and we
+        Questions about Solosphere, partnerships, or accessibility? We read every message—travel is personal, and we
         want this product to feel that way too.
       </p>
       <div className="mt-10 rounded-3xl border border-slate-200 bg-white p-8 shadow-soft">
         <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-400">Email</h2>
-        <a href="mailto:hello@naripath.example" className="mt-2 inline-block text-lg font-semibold text-sky-700 hover:text-sky-900">
-          hello@naripath.example
+        <a href="mailto:hello@solosphere.example" className="mt-2 inline-block text-lg font-semibold text-sky-700 hover:text-sky-900">
+          hello@solosphere.example
         </a>
         <p className="mt-6 text-sm leading-relaxed text-slate-600">
           Replace this address with your real support inbox in the footer and on this page when you go live. Typical

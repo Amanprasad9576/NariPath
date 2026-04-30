@@ -5,7 +5,7 @@ import { Footer } from '@/components/Footer';
 import { Navbar } from '@/components/Navbar';
 
 export const metadata: Metadata = {
-  title: 'Mohit Manajan Travel Assistant',
+  title: 'Solosphere Travel Assistant',
   description: 'Modern travel assistant UI for safety, culture, and planning.',
 };
 

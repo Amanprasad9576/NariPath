@@ -13,7 +13,7 @@ export default function TermsPage() {
         <div>
           <h2 className="text-lg font-semibold text-slate-900">Use of the service</h2>
           <p className="mt-2 leading-relaxed">
-            Nari Path provides informational tools to support travel planning. Itineraries, cultural notes, and
+            Solosphere provides informational tools to support travel planning. Itineraries, cultural notes, and
             listings are suggestions only—not professional travel, legal, medical, or safety advice.
           </p>
         </div>
@@ -27,7 +27,7 @@ export default function TermsPage() {
         <div>
           <h2 className="text-lg font-semibold text-slate-900">Liability</h2>
           <p className="mt-2 leading-relaxed">
-            To the maximum extent permitted by law, Nari Path and its contributors are not liable for losses arising
+            To the maximum extent permitted by law, Solosphere and its contributors are not liable for losses arising
             from reliance on generated content, map data, or third-party APIs.
           </p>
         </div>

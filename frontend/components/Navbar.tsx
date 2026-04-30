@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
@@ -20,7 +21,9 @@ function NavLink({ href, label, onNavigate }: { href: string; label: string; onN
       href={href}
       onClick={onNavigate}
       className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-        active ? 'bg-slate-900 text-white shadow-md shadow-slate-900/15' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+        active
+          ? 'bg-slate-900 text-white shadow-md shadow-slate-900/15'
+          : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
       }`}
     >
       {label}
@@ -39,11 +42,11 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 shadow-sm backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link href="/" className="group flex shrink-0 items-center gap-3" onClick={closeMenu}>
-          <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 to-indigo-600 text-sm font-bold text-white shadow-lg shadow-sky-600/25 transition group-hover:scale-[1.02]">
-            NP
-          </span>
+          <div className="h-11 w-11 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md shadow-sky-100/60">
+            <Image src="/solosphere-logo.png" alt="Solosphere logo" width={44} height={44} className="h-full w-full object-cover" />
+          </div>
           <div className="leading-tight">
-            <span className="block text-lg font-semibold tracking-tight text-slate-900">Nari Path</span>
+            <span className="block text-lg font-semibold tracking-tight text-slate-900">Solosphere</span>
             <span className="hidden text-[11px] font-medium uppercase tracking-[0.18em] text-slate-400 sm:block">
               Travel with clarity
             </span>

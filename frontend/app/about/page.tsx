@@ -6,9 +6,9 @@ export default function AboutPage() {
       <Link href="/" className="text-sm font-medium text-sky-700 hover:text-sky-900">
         ← Back to home
       </Link>
-      <h1 className="mt-8 text-4xl font-bold tracking-tight text-slate-900">About Nari Path</h1>
+      <h1 className="mt-8 text-4xl font-bold tracking-tight text-slate-900">About Solosphere</h1>
       <p className="mt-4 text-lg leading-relaxed text-slate-600">
-        Nari Path is a travel companion for people who want more than a generic checklist—we combine practical tools
+        Solosphere is a travel companion for people who want more than a generic checklist—we combine practical tools
         (routes, currency, translation, culture notes) with a calm, respectful lens on how to move through new places.
       </p>
       <h2 className="mt-10 text-xl font-semibold text-slate-900">What we care about</h2>
