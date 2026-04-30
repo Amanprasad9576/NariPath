@@ -43,7 +43,7 @@ export function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link href="/" className="group flex shrink-0 items-center gap-3" onClick={closeMenu}>
           <div className="h-11 w-11 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md shadow-sky-100/60">
-            <Image src="/solosphere-logo.png" alt="Solosphere logo" width={44} height={44} className="h-full w-full object-cover" />
+            <Image src="/solosphere.png" alt="Solosphere logo" width={44} height={44} className="h-full w-full object-cover" />
           </div>
           <div className="leading-tight">
             <span className="block text-lg font-semibold tracking-tight text-slate-900">Solosphere</span>

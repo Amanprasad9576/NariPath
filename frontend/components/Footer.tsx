@@ -23,7 +23,7 @@ export function Footer() {
           <div className="lg:col-span-4">
             <Link href="/" className="inline-flex items-center gap-3 text-xl font-semibold tracking-tight text-white">
               <div className="h-10 w-10 overflow-hidden rounded-xl border border-white/20 bg-white shadow-lg shadow-sky-900/30">
-                <Image src="/solosphere-logo.png" alt="Solosphere logo" width={40} height={40} className="h-full w-full object-cover" />
+                <Image src="/solosphere.png" alt="Solosphere logo" width={40} height={40} className="h-full w-full object-cover" />
               </div>
               Solosphere
             </Link>
