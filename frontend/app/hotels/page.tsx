@@ -98,9 +98,7 @@ export default function HotelsPage() {
           hotels.map((h) => <HotelCard key={h.id} hotel={h} />)
         ) : !loading && !error ? (
           <p className="col-span-full text-slate-500">
-            Run a search to see hotels. Add <code className="rounded bg-slate-100 px-1">GEOAPIFY_API_KEY</code> in{' '}
-            <code className="rounded bg-slate-100 px-1">frontend/.env.local</code>, then restart{' '}
-            <code className="rounded bg-slate-100 px-1">npm run dev</code>.
+             
           </p>
         ) : null}
       </div>
